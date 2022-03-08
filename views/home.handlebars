@@ -1,0 +1,38 @@
+<form action="/calculate" class="container mt-4">
+    <h1>Bé tập tính</h1>
+    <div class="row mt-1 mb-1">
+        <div class="col-lg-1 col-md-2">Số thứ nhất</div>
+        <div class="col-lg-2 col-md-4">
+            <input type="text" name="firstNumber" id="first-number__input" value="{{firstNumber}}">
+        </div>
+        <div class="col-lg-2 col-md-4">
+            <input type="radio" id="add" name="calculate" value="add"> Cộng
+            <input type="radio" id="subtract" class="ms-2" name="calculate" value="sub"> Trừ
+        </div>
+    </div>
+    <div class="row mt-1 mb-1">
+        <div class="col-lg-1 col-md-2">Số thứ hai</div>
+        <div class="col-lg-2 col-md-4">
+            <input type="text" name="secondNumber" id="second-number__input" value="{{secondNumber}}">
+        </div>
+        <div class="col-lg-2 col-md-4">
+            <input type="radio" id="multiple" name="calculate" value="multi"> Nhân
+            <input type="radio" id="divide" class="ms-2" name="calculate" value="divide"> Chia
+        </div>
+    </div>
+    <div class="row mt-1 mb-1">
+        <div class="col-lg-1 col-md-2">Kết quả</div>
+        <div class="col-lg-2 col-md-4">
+            <input type="text" id="result" value="{{result}}">
+        </div>
+        <div class="col-lg-2 col-md-4">
+            <input type="submit" id="calculate" value="Tính">
+        </div>
+    </div>
+    <div class="row mt-1 mb-1">
+        <div class="col-lg-1 col-md-2">Thông báo</div>
+        <div class="col-lg-4 col-md-8">
+            <p class="text-danger" id="show-alert">{{errorMsg}}</p>
+        </div>
+    </div>
+</form>
