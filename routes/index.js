@@ -8,25 +8,37 @@ const checkValid = (req, res, next) => {
   const num1 = parseFloat(data.num1);
   const num2 = parseFloat(data.num2);
   let isError = false;
+  let isCheck = false;
   let errorMsg = '';
 
-  if (num1 == "" || isNaN(num1)) {
+  if (isNaN(num1)) {
     errorMsg = "Số thứ nhất không phải số thực";
     isError = true;
   }
-  else if (num2 == "" || isNaN(num2)) {
+  else if (isNaN(num2)) {
     errorMsg = "Số thứ hai không phải số thực";
     isError = true;
   }
   else if (data.calc == undefined) {
     errorMsg = "Mời chọn phép tính ";
     isError = true;
+    isCheck = true;
   }
 
   if (isError) {
-    res.render('index', {
-      errorMsg: errorMsg,
-    });
+    if(isCheck){
+      res.render('index', {
+        num1: num1,
+        num2: num2,
+        errorMsg: errorMsg,
+      });
+    }
+    else {
+      res.render('index', {
+        errorMsg: errorMsg,
+      });
+    }
+    
   } else {
     next();
   }
